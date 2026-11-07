@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { ComponentPropsWithoutRef } from 'react'
 
-export default function Input() {
+interface InputProps extends ComponentPropsWithoutRef<"input"> {}
+
+export default function Input({ children, className, ...props }: InputProps) {
   return (
-    <div>Input</div>
+    <input 
+      className={`rounded-full bg-accent-soft hover:bg-accent-soft/50 focus:bg-accent-foreground transition-all outline-0 px-4 py-3 w- ${className || ''}`}
+      {...props}
+    >
+      {children}
+    </input>
   )
 }

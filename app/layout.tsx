@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
-import { Fraunces } from "next/font/google";
+import { Ubuntu } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/ui/Header";
 import Footer from "@/components/ui/Footer";
+import { ThemeProvider } from "@/context/ThemeContext";
 
-const geistSans = Fraunces({
-  variable: "--font-geist-sans",
+const ubuntu = Ubuntu({
+  variable: "--font-ubuntu",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "700"]
 });
 
 export const metadata: Metadata = {
@@ -16,13 +18,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${geistSans.className} h-full antialiased`}>
+    <html lang="en" className={`${ubuntu.className} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
-        <Header />
-        <main className="h-full w-full">
-          {children}
-        </main>
-        <Footer />
+        <ThemeProvider>
+          <Header />
+          <main className="h-full w-full">{children}</main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

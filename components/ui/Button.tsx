@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { ComponentPropsWithoutRef } from 'react';
 
-export default function Button() {
+interface ButtonProps extends ComponentPropsWithoutRef<"button"> {}
+
+export default function Button({ children, className, ...props }: ButtonProps) {
   return (
-    <div>Button</div>
-  )
+    <button 
+      className={`rounded-full bg-accent-soft hover:bg-accent transition-all ${className || ''}`}
+      {...props}
+    >
+      {children}
+    </button>
+  );
 }

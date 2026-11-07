@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+button {
+  @apply cursor-pointer;
+}
+
+a {
+  @apply cursor-pointer;
+}
+
+* {
+  @apply transition-all
+}
+
 :root {
   color-scheme: light;
 

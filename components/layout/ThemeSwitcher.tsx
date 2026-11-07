@@ -1,27 +1,25 @@
 "use client";
 
-const THEMES = ["light", "dark"] as const;
-type Theme = (typeof THEMES)[number];
+import useTheme from "@/hooks/useTheme";
+import { Moon, Sun } from "lucide-react";
+import Button from "../ui/Button";
 
 export function ThemeSwitcher() {
-  function applyTheme(theme: Theme) {
-    const root = document.documentElement;
-    root.classList.remove(...THEMES);
-    root.classList.add(theme);
-    localStorage.setItem("theme", theme);
-  }
+  const [theme, setTheme] = useTheme();
 
   return (
     <div className="flex gap-2">
-      {THEMES.map((theme) => (
-        <button
-          key={theme}
-          onClick={() => applyTheme(theme)}
-          className="rounded-md bg-primary px-3 py-1 text-sm capitalize text-primary-foreground"
-        >
-          {theme}
-        </button>
-      ))}
+      <span className="rounded-full p-3 items-center justify-center flex">
+        {theme === "dark" ? (
+          <Button className="p-3" onClick={() => setTheme("light")}>
+            <Sun />
+          </Button>
+        ) : (
+          <Button className="p-3" onClick={() => setTheme("dark")}>
+            <Moon />
+          </Button>
+        )}
+      </span>
     </div>
   );
 }
