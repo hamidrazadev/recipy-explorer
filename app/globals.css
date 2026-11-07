@@ -1,26 +1,133 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+
+  /* Backgrounds */
+  --background: #FAF9F6;
+  --surface: #FFFFFF;
+  --surface-secondary: #F0F2EB;
+  --surface-hover: #E9EDE5;
+
+  /* Brand */
+  --primary: #3F6748;
+  --primary-hover: #527D59;
+  --primary-foreground: #FFFFFF;
+
+  /* Accent */
+  --accent: #D97745;
+  --accent-soft: #F5E5D8;
+  --accent-foreground: #FFFFFF;
+
+  /* Typography */
+  --text-primary: #242B24;
+  --text-secondary: #626B60;
+  --text-muted: #92998D;
+
+  /* Borders */
+  --border: #E5E9DF;
+  --border-strong: #CDD5C8;
+
+  /* Status */
+  --success: #36845A;
+  --warning: #D99A35;
+  --error: #C94F45;
+  --info: #5486A6;
+
+  /* Recipe-specific */
+  --rating: #E6A23C;
+  --favorite: #D95D59;
+  --tag-background: #EAF0E6;
+  --tag-text: #3F6748;
+
+  /* Shadows */
+  --shadow-color: 63, 103, 72;
+  --shadow-sm: 0 2px 8px rgba(var(--shadow-color), 0.06);
+  --shadow-md: 0 8px 24px rgba(var(--shadow-color), 0.10);
+}
+
+.dark {
+  color-scheme: dark;
+
+  /* Backgrounds */
+  --background: #171D19;
+  --surface: #202921;
+  --surface-secondary: #29352B;
+  --surface-hover: #303D32;
+
+  /* Brand */
+  --primary: #8DBB88;
+  --primary-hover: #A5CCA0;
+  --primary-foreground: #172019;
+
+  /* Accent */
+  --accent: #E99565;
+  --accent-soft: #493226;
+  --accent-foreground: #211811;
+
+  /* Typography */
+  --text-primary: #F1F3EC;
+  --text-secondary: #A7B1A3;
+  --text-muted: #778477;
+
+  /* Borders */
+  --border: #364438;
+  --border-strong: #495B4B;
+
+  /* Status */
+  --success: #78BD8A;
+  --warning: #E9B45F;
+  --error: #F07870;
+  --info: #83B5D5;
+
+  /* Recipe-specific */
+  --rating: #F0B84F;
+  --favorite: #F07870;
+  --tag-background: #2D4030;
+  --tag-text: #A5CCA0;
+
+  /* Shadows */
+  --shadow-color: 0, 0, 0;
+  --shadow-sm: 0 2px 8px rgba(var(--shadow-color), 0.18);
+  --shadow-md: 0 8px 24px rgba(var(--shadow-color), 0.28);
 }
 
 @theme inline {
+  /* Backgrounds */
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-surface: var(--surface);
+  --color-surface-secondary: var(--surface-secondary);
+  --color-surface-hover: var(--surface-hover);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+  /* Brand */
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-foreground: var(--primary-foreground);
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* Accent */
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-foreground: var(--accent-foreground);
+
+  /* Typography */
+  --color-foreground: var(--text-primary);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+
+  /* Borders */
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+
+  /* Status */
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+  --color-info: var(--info);
+
+  /* Recipe-specific */
+  --color-rating: var(--rating);
+  --color-favorite: var(--favorite);
+  --color-tag-background: var(--tag-background);
+  --color-tag-text: var(--tag-text);
 }
