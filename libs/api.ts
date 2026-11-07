@@ -1,4 +1,4 @@
-import { Recipy, RecipyResponse, } from "@/types/Recipy";
+import { Recipy as RecipyType, RecipyResponse, } from "@/types/Recipy";
 
 const responseResolver = async <T>(URI: string): Promise<T | undefined> => {
     try {
@@ -17,8 +17,8 @@ class Api {
         return await responseResolver<RecipyResponse>(`${this.baseUrl + (limit ? `?limit=${limit}` : '')}`)
     }
 
-    async getById(id: number): Promise<Recipy | undefined> {
-        return await responseResolver<Recipy>(this.baseUrl + id)
+    async getById(id: number): Promise<RecipyType | undefined> {
+        return await responseResolver<RecipyType>(this.baseUrl + id)
     }
 
     async getByTag(tag: string): Promise<RecipyResponse | undefined> {
