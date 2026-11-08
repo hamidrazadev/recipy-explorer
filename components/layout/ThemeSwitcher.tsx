@@ -1,8 +1,9 @@
 "use client";
 
 import useTheme from "@/hooks/useTheme";
-import { Moon, Sun } from "lucide-react";
 import Button from "../ui/Button";
+import { IoIosSunny } from "react-icons/io";
+import { FaRegMoon } from "react-icons/fa";
 
 export function ThemeSwitcher() {
   const [theme, setTheme] = useTheme();
@@ -11,12 +12,12 @@ export function ThemeSwitcher() {
     <div className="flex gap-2">
       <span className="rounded-full p-3 items-center justify-center flex">
         {theme === "dark" ? (
-          <Button className="p-3" onClick={() => setTheme("light")}>
-            <Sun />
+          <Button className="p-3 text-xl" onClick={() => setTheme("light")}>
+            <IoIosSunny />
           </Button>
         ) : (
-          <Button className="p-3" onClick={() => setTheme("dark")}>
-            <Moon />
+          <Button className="p-3 text-xl" onClick={() => setTheme("dark")}>
+            <FaRegMoon />
           </Button>
         )}
       </span>

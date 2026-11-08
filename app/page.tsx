@@ -1,19 +1,21 @@
+import Hero from "@/components/pages/home/Hero";
+import RecipyGrid from "@/components/ui/RecipyGrid";
 import Recipy from "@/libs/api";
+import { notFound } from "next/navigation";
 
 export default async function Home() {
-  // const recipies = await Recipy.getAll(5)
-  // if (recipies) {
-  //   console.log(recipies.recipes)
-  //   const recipy = await Recipy.getById(recipies.recipes[0].id)
-  //   console.log(recipy)
-  //   const recipyByTag = await Recipy.getByTag(recipies.recipes[0].tags[0])
-  //   console.log(recipyByTag)
-  //   const recipyByQuery = await Recipy.getByQuery('Pasta')
-  //   console.log(recipyByQuery)
-  // }
+  const randomIdx = Math.floor(Math.random() * 30);
+  const recipies = await Recipy.getAll();
+  if (!recipies) {
+    notFound();
+  }
+
+  const heroRecipy = recipies.recipes[randomIdx];
+
   return (
-    <div className="">
-      Homepage
+    <div className="container mx-auto">
+      <Hero recipy={heroRecipy} />
+      <RecipyGrid recipies={recipies.recipes} />
     </div>
   );
 }

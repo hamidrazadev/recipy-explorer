@@ -6,8 +6,8 @@ import useTheme from "@/hooks/useTheme";
 import Link from "next/link";
 import Input from "./Input";
 import Button from "./Button";
-import { Menu, Search } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { IoSearch, IoMenu } from "react-icons/io5";
 
 const navLinks = [
   {
@@ -57,7 +57,7 @@ export default function Header() {
   }, [theme]);
 
   return (
-    <header className="w-full bg-background">
+    <header className="w-full bg-accent-soft sticky top-0">
       <div className="container mx-auto py-1 flex justify-between gap-2">
         <Link href={"/"} className="flex items-center xl:gap-4 gap-2">
           <Image
@@ -95,11 +95,11 @@ export default function Header() {
             className="p-3 lg:hidden"
             onClick={() => router.push("/search")}
           >
-            <Search />
+            <IoSearch />
           </Button>
           <ThemeSwitcher />
           <Button className="p-3 lg:hidden" onClick={() => {}}>
-            <Menu />
+            <IoMenu />
           </Button>
         </div>
       </div>

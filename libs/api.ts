@@ -14,7 +14,7 @@ class Api {
     baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL
 
     async getAll(limit?: number): Promise<RecipyResponse | undefined> {
-        return await responseResolver<RecipyResponse>(`${this.baseUrl + (limit ? `?limit=${limit}` : '')}`)
+        return await responseResolver<RecipyResponse>(`${this.baseUrl + (limit ? `?limit=${limit}` : '?limit=50')}`)
     }
 
     async getById(id: number): Promise<RecipyType | undefined> {
