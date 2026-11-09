@@ -57,7 +57,7 @@ export default function Header() {
   }, [theme]);
 
   return (
-    <header className="w-full bg-accent-soft sticky top-0">
+    <header className="w-full bg-accent-soft sticky top-0 z-50">
       <div className="container mx-auto py-1 flex justify-between gap-2">
         <Link href={"/"} className="flex items-center xl:gap-4 gap-2">
           <Image

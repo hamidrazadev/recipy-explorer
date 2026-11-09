@@ -22,7 +22,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col">
         <ThemeProvider>
           <Header />
-          <main className="h-full w-full bg-background px-2">{children}</main>
+          <main className="h-full w-full bg-background">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>

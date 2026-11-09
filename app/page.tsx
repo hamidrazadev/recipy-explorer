@@ -9,9 +9,8 @@ export default async function Home() {
     notFound();
   }
 
-
   return (
-    <div className="container mx-auto">
+    <div className="w-full">
       <Hero recipies={recipies.recipes} />
       <RecipyGrid recipies={recipies.recipes} />
     </div>

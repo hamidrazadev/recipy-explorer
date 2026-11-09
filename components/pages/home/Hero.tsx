@@ -4,11 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Hero({ recipies }: { recipies: Array<Recipy> }) {
-  const randomIdx = Math.floor(Math.random() * 30);
+  const randomIdx = Math.floor(Math.random() * 50);
   const recipy = recipies[randomIdx];
 
   return (
-    <div className="flex items-center justify-between md:flex-row flex-col-reverse gap-2 md:py-0 py-2">
+    <div className="flex items-center justify-between md:flex-row flex-col-reverse gap-2 md:py-4 py-2 container mx-auto px-2">
       <div className="flex flex-col gap-2">
         <Link href={`/recipy/${recipy.id}`}>
           <h1 className="xl:text-5xl lg:text-4xl text-3xl font-bold hover:underline hover:text-accent">
